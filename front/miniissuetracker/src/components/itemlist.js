@@ -28,7 +28,7 @@ const navigate = useNavigate();
   };
 
   const dateTemplate=(rowdata)=>{
-    return moment(rowdata.createdAt).format("MM-DD-YYYY");
+    return moment(rowdata.createdAt).format("MM-DD-YYYY h:mm A");
   }
 
   const MarkResolvedTemplate=(rowdata)=>{
@@ -45,7 +45,7 @@ const navigate = useNavigate();
     <Column field="issueTitle" header="Issue Title"></Column>
     <Column field="issueDescription" header="Issue Description"></Column>
     <Column field="createdAt" header="Date Occurrence" body={dateTemplate}></Column>
-    <Column field="issueResolved" header="Issue Resolved" body={MarkResolvedTemplate} ></Column>
+    <Column field="issueResolved" header="Issue Resolved" body={MarkResolvedTemplate} sortable  ></Column>
 </DataTable>
     </div>
   );
